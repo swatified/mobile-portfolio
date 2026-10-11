@@ -3,24 +3,20 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Swati Portfolio',
+  description: 'Swati Sharma · Android & Flutter Developer Portfolio',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
+      {
+        url: '/icon-light-32x32.png',
+        sizes: '32x32',
+      },
     ],
+    shortcut: '/icon.svg',
     apple: '/apple-icon.png',
   },
 }

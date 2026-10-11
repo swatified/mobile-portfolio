@@ -1127,12 +1127,6 @@ h2 {
     height: 330px;
     width: 170px;
   }
-
-  .gallery-count-5 .project-device,
-  .gallery-count-4 .project-device {
-    height: 285px;
-    width: 146px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1348,12 +1342,6 @@ body {
     height: 300px;
     width: 154px;
   }
-
-  .gallery-count-5 .project-device,
-  .gallery-count-4 .project-device {
-    height: 260px;
-    width: 133px;
-  }
 }
 
 .project-page .project-hero-copy em {
@@ -1423,21 +1411,57 @@ a {
   flex: 0 1 auto;
 }
 
-/* ── 5-phone gallery: keep all on one row, just tighten side padding ── */
-.project-gallery.gallery-count-5 {
-  flex-wrap: nowrap;
-}
-
-.project-gallery-section:has(.gallery-count-5) {
-  padding-left: 2vw;
-  padding-right: 2vw;
-}
-
-/* ── 6-phone gallery: 3 per row ── */
-.project-gallery.gallery-count-6 {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
+/* ── Responsive project screen galleries (fluid on desktop/tablet, 2 per row on mobile) ── */
+.project-gallery {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.5vw, 34px);
   justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .project-gallery {
+    gap: 22px 14px;
+    justify-content: center;
+  }
+
+  .project-gallery .project-device {
+    aspect-ratio: 195 / 380;
+    border-radius: 26px;
+    border-width: 5px;
+    box-shadow: 0 16px 24px rgba(29, 27, 25, .16);
+    height: auto;
+    max-width: 175px;
+    width: calc((100% - 16px) / 2);
+  }
+
+  .project-gallery .project-device-screen {
+    border-radius: 20px;
+  }
+
+  .project-device-1 { --device-rotation: -2.5deg; }
+  .project-device-2 { --device-rotation: 2deg; }
+  .project-device-3 { --device-rotation: -2deg; }
+  .project-device-4 { --device-rotation: 2.5deg; }
+  .project-device-5 { --device-rotation: -2deg; }
+  .project-device-6 { --device-rotation: 2deg; }
+}
+
+@media (max-width: 400px) {
+  .project-gallery {
+    gap: 16px 10px;
+  }
+
+  .project-gallery .project-device {
+    border-radius: 20px;
+    border-width: 4px;
+    width: calc((100% - 12px) / 2);
+  }
+
+  .project-gallery .project-device-screen {
+    border-radius: 15px;
+  }
 }
 
 button:focus-visible {

@@ -98,7 +98,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="project-page">
       <header className="project-header">
-        <Link className="project-back" href="/"><ArrowLeft /> Back to projects</Link>
+        <Link className="project-back" href="/#projects"><ArrowLeft /> Back to projects</Link>
         <span className="project-mark">Project showcase</span>
       </header>
       <section className={`project-hero project-${project.color}`}>
