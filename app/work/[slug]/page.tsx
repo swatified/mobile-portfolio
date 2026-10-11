@@ -5,16 +5,9 @@ const projects = {
   verbix: {
     name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
     intro: 'A calm command center for busy minds.',
-    description: 'Verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
+    description: 'verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
     github: 'https://github.com/',
     screens: ['verbix-01', 'verbix-02', 'verbix-03', 'verbix-04'],
-  },
-  orbit: {
-    name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
-    intro: 'A calm command center for busy minds.',
-    description: 'Verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
-    github: 'https://github.com/',
-    screens: ['orbit-01', 'orbit-02', 'orbit-03', 'orbit-04'],
   },
   safebite: {
     name: 'SafeBite', type: 'Health/Cooking ', year: '2025', color: 'lavender',
@@ -31,46 +24,25 @@ const projects = {
     screens: ['attune-01', 'attune-02', 'attune-03'],
   },
   tara: {
-    name: 'Tara', type: 'Women Safety', year: '2023', color: 'yellow',
+    name: 'Tara', type: 'Food & culture', year: '2023', color: 'yellow',
     intro: 'A curious guide to good places and better days.',
     description: 'Tara helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
     github: 'https://github.com/',
     screens: ['tara-01', 'tara-02', 'tara-03', 'tara-04'],
   },
-  nori: {
-    name: 'Tara', type: 'Women Safety', year: '2023', color: 'yellow',
-    intro: 'A curious guide to good places and better days.',
-    description: 'Tara helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
-    github: 'https://github.com/',
-    screens: ['nori-01', 'nori-02', 'nori-03', 'nori-04'],
-  },
   quiz: {
-    name: 'Android Quiz', type: 'Themed Quiz', year: '2023', color: 'blue',
+    name: 'Android Quiz', type: 'Music', year: '2023', color: 'blue',
     intro: 'Find your pace. Then lose yourself in it.',
-    description: 'Android Quiz is an interactive trivia app built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the experience feeling alive.',
+    description: 'quiz is a music companion built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the listening experience feeling alive.',
     github: 'https://github.com/',
     screens: ['quiz-01', 'quiz-02', 'quiz-03'],
   },
-  tempo: {
-    name: 'Android Quiz', type: 'Themed Quiz', year: '2023', color: 'blue',
-    intro: 'Find your pace. Then lose yourself in it.',
-    description: 'Android Quiz is an interactive trivia app built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the experience feeling alive.',
-    github: 'https://github.com/',
-    screens: ['tempo-01', 'tempo-02', 'tempo-03'],
-  },
-  verbixv1: {
-    name: 'Verbix V1', type: 'Education', year: '2025', color: 'peach',
+  'verbixv1': {
+    name: 'Verbix V1', type: 'Daily planning', year: '2025', color: 'peach',
     intro: 'A softer way to get things done.',
     description: 'A focused companion for daily planning, built as an exploration of warm surfaces, useful constraints, and motion that rewards completion without shouting for attention.',
     github: 'https://github.com/',
     screens: ['verbixv1-01', 'verbixv1-02', 'verbixv1-03', 'verbixv1-04'],
-  },
-  'orbit-daily': {
-    name: 'Verbix V1', type: 'Education', year: '2025', color: 'peach',
-    intro: 'A softer way to get things done.',
-    description: 'A focused companion for daily planning, built as an exploration of warm surfaces, useful constraints, and motion that rewards completion without shouting for attention.',
-    github: 'https://github.com/',
-    screens: ['orbit-daily-01', 'orbit-daily-02', 'orbit-daily-03', 'orbit-daily-04'],
   },
 } as const
 
