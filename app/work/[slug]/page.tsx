@@ -55,71 +55,11 @@ const projects = {
   },
 } as const
 
-type Project = (typeof projects)[keyof typeof projects]
-
-function MediaPlaceholder({ project, screen, index }: { project: Project; screen: string; index: number }) {
-  const media =
-    (project as Project & { media?: Record<string, string> }).media?.[screen] ??
-    (screen && (screen.startsWith('/') || screen.includes('.')) ? screen : null)
-  const isVideo = media ? media.endsWith('.mp4') || media.endsWith('.webm') : false
-  const zoom = (project as { videoZoom?: number }).videoZoom ?? 1
-
-  return (
-    <div className={`project-device project-device-${index + 1} project-${project.color}`}>
-      <div className="project-device-screen">
-        {media ? (
-          isVideo ? (
-            <video
-              src={media}
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{ transform: `scale(${zoom})`, transformOrigin: 'center center' }}
-            />
-          ) : (
-            <img src={media} alt={`${project.name} screen ${index + 1}`} />
-          )
-        ) : (
-          <div className="media-placeholder">
-            <span>{project.name}</span>
-            <small>Add {screen}.mp4 or image</small>
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
+import { ProjectShowcase } from '@/components/ProjectShowcase'
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const project = projects[slug as keyof typeof projects] ?? projects.verbix
 
-  return (
-    <main className="project-page">
-      <header className="project-header">
-        <Link className="project-back" href="/#projects"><ArrowLeft /> Back to projects</Link>
-        <span className="project-mark">Project showcase</span>
-      </header>
-      <section className={`project-hero project-${project.color}`}>
-        <div className="project-hero-copy">
-          <p className="section-label">{project.type} · {project.year}</p>
-          <h1>{project.name}<em>.</em></h1>
-          <p className="project-intro">{project.intro}</p>
-          <p className="project-description">{project.description}</p>
-          <div className="project-hero-actions">
-            <a className="github-link" href={project.github} target="_blank" rel="noreferrer"><Code2 /> View on GitHub <ArrowUpRight /></a>
-            <a className="round-arrow" href="#screens" aria-label="Scroll to screens showcase"><ArrowDown /></a>
-          </div>
-        </div>
-        <div className="project-hero-device"><MediaPlaceholder project={project} screen={(project as { splash?: string }).splash ?? project.screens[0]} index={0} /></div>
-      </section>
-      <section id="screens" className="project-gallery-section">
-        <div className="project-gallery-heading"><p className="section-label">The screens</p><p>Swipe through the details<br />that make it feel real.</p></div>
-        <div className={`project-gallery gallery-count-${project.screens.length}`}>
-          {project.screens.map((screen, index) => <MediaPlaceholder key={screen} project={project} screen={screen} index={index} />)}
-        </div>
-      </section>
-    </main>
-  )
+  return <ProjectShowcase project={project} />
 }

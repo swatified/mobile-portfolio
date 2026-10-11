@@ -2,6 +2,7 @@
 
 import { ArrowDown, ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-react'
 import { useState } from 'react'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const apps = [
   { id: '01', name: 'Verbix', slug: 'verbix', type: 'Education', color: 'coral', className: 'app-verbix', stat: 'Focus, in motion', note: 'AI-assisted learning for children with Dyslexia.', image: '/verbix/splash.jpg' },
@@ -40,8 +41,11 @@ export default function Page() {
     <main className="portfolio-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">S</span><span>Swati Sharma<span className="brand-dot">.</span></span></a>
-        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
-        <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+        <div className="header-actions">
+          <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
+          <ThemeToggle />
+          <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+        </div>
       </header>
 
       <section id="top" className="hero-section">

@@ -1533,3 +1533,383 @@ body::before {
   width: 62px;
   z-index: 10;
 }
+
+/* ════════════════════════════════════════════════════════════
+   THEME TOGGLE & DARK MODE
+   ════════════════════════════════════════════════════════════ */
+
+.header-actions,
+.project-header-actions {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.theme-toggle {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  padding: 0;
+  transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+  width: 38px;
+}
+
+.theme-toggle:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: rotate(20deg) scale(1.05);
+}
+
+.theme-toggle svg {
+  height: 17px;
+  width: 17px;
+  transition: transform .3s ease;
+}
+
+/* Smooth transition between color schemes */
+html,
+body,
+.app-card,
+.site-header,
+.site-footer,
+.project-hero,
+.project-gallery-section,
+.phone-screen {
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+/* Dark Mode Tokens */
+html.dark {
+  --paper: #121110;
+  --ink: #f5f2eb;
+  --muted-ink: #a29c92;
+  color-scheme: dark;
+}
+
+html.dark body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Dark mode card backgrounds: deep rich tones */
+html.dark .app-card {
+  background: #1b1a18;
+}
+
+html.dark .card-1 {
+  background: #38211c;
+}
+
+html.dark .card-2 {
+  background: #282136;
+}
+
+html.dark .card-3 {
+  background: #182f23;
+}
+
+html.dark .card-4 {
+  background: #312915;
+}
+
+html.dark .card-5 {
+  background: #172736;
+}
+
+html.dark .card-6 {
+  background: #332317;
+}
+
+/* Dark mode project hero backgrounds */
+html.dark .project-coral {
+  background: #331e19;
+}
+
+html.dark .project-lavender {
+  background: #261e33;
+}
+
+html.dark .project-mint {
+  background: #172b20;
+}
+
+html.dark .project-yellow {
+  background: #2e2613;
+}
+
+html.dark .project-blue {
+  background: #162633;
+}
+
+html.dark .project-peach {
+  background: #302016;
+}
+
+html.dark .project-gallery-section {
+  background: var(--paper);
+  border-top-color: rgba(245, 242, 235, .08);
+}
+
+html.dark .site-footer {
+  border-top-color: rgba(245, 242, 235, .12);
+}
+
+html.dark .tool-list span {
+  border-color: rgba(245, 242, 235, .2);
+}
+
+html.dark .phone-screen {
+  background: #181716;
+  color: var(--ink);
+}
+
+html.dark .brand-mark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+html.dark .nav-links.is-open {
+  background: #181716;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SCREEN ZOOM LIGHTBOX OVERLAY
+   ════════════════════════════════════════════════════════════ */
+
+.is-clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.device-zoom-badge {
+  align-items: center;
+  background: rgba(23, 23, 23, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 28px;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  transform: scale(.85);
+  transition: opacity .25s ease, transform .25s ease;
+  width: 28px;
+  z-index: 12;
+}
+
+.is-clickable:hover .device-zoom-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Fullscreen Backdrop */
+.screen-zoom-overlay {
+  align-items: center;
+  animation: zoomFadeIn .22s ease-out;
+  background: rgba(10, 9, 8, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 9999;
+}
+
+@keyframes zoomFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.zoom-close-btn {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  position: absolute;
+  right: 28px;
+  top: 24px;
+  transition: transform .2s ease, background-color .2s ease;
+  width: 46px;
+  z-index: 10002;
+}
+
+.zoom-close-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+  transform: scale(1.08) rotate(90deg);
+}
+
+/* Navigation Arrows */
+.zoom-nav-btn {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 52px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform .2s ease, background-color .2s ease;
+  width: 52px;
+  z-index: 10002;
+}
+
+.zoom-nav-btn.is-prev {
+  left: max(24px, calc(50vw - 260px));
+}
+
+.zoom-nav-btn.is-next {
+  right: max(24px, calc(50vw - 260px));
+}
+
+.zoom-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Zoomed Phone Mockup Shell */
+.zoom-phone-shell {
+  animation: zoomPhonePop .28s cubic-bezier(.16, 1, .3, 1);
+  background: #171717;
+  border: 8px solid #1c1c1c;
+  border-radius: 46px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  height: min(84vh, 760px);
+  max-height: 840px;
+  overflow: hidden;
+  position: relative;
+  width: min(calc(84vh * 0.49), 380px);
+  z-index: 10001;
+}
+
+@keyframes zoomPhonePop {
+  from {
+    opacity: 0;
+    transform: scale(.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-phone-speaker {
+  background: #000;
+  border-radius: 8px;
+  height: 16px;
+  left: 50%;
+  position: absolute;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 76px;
+  z-index: 10;
+}
+
+.zoom-phone-screen {
+  background: #000;
+  border-radius: 38px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.zoom-phone-screen img,
+.zoom-phone-screen video {
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Footer Badge and Dots */
+.zoom-footer-pill {
+  align-items: center;
+  background: rgba(20, 19, 18, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 30px;
+  bottom: 22px;
+  color: #f0ece3;
+  display: flex;
+  font-size: 12px;
+  gap: 16px;
+  left: 50%;
+  padding: 8px 18px;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 10002;
+}
+
+.zoom-dots {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.zoom-dot {
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 7px;
+  padding: 0;
+  transition: background-color .2s ease, transform .2s ease;
+  width: 7px;
+}
+
+.zoom-dot.is-active {
+  background: var(--coral, #ee826d);
+  transform: scale(1.3);
+}
+
+@media (max-width: 600px) {
+  .zoom-nav-btn.is-prev {
+    left: 10px;
+  }
+  .zoom-nav-btn.is-next {
+    right: 10px;
+  }
+  .zoom-phone-shell {
+    border-width: 6px;
+    border-radius: 36px;
+    height: min(80vh, 620px);
+    width: min(calc(80vh * 0.5), 320px);
+  }
+  .zoom-phone-screen {
+    border-radius: 30px;
+  }
+  .zoom-close-btn {
+    right: 16px;
+    top: 16px;
+  }
+}
