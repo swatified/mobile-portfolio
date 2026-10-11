@@ -8,7 +8,7 @@ const projects = {
     description: 'verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
     github: 'https://github.com/',
     splash: '/verbix/splash.jpg',
-    screens: ['verbix-01', 'verbix-02', 'verbix-03', 'verbix-04'],
+    screens: ['/verbix/v1.mp4', '/verbix/v2.mp4', '/verbix/v3.mp4', '/verbix/v4.mp4', '/verbix/v5.mp4', '/verbix/v6.mp4'],
   },
   safebite: {
     name: 'SafeBite', type: 'Health/Cooking ', year: '2025', color: 'lavender',
