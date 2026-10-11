@@ -25,7 +25,7 @@ const projects = {
     description: 'Attune makes everyday money decisions easier to see. The app pairs a simple visual language with useful daily context, so progress feels understandable instead of intimidating.',
     github: 'https://github.com/',
     splash: '/attune/splash.jpg',
-    screens: ['attune-01', 'attune-02', 'attune-03'],
+    screens: ['/attune/p1.png', '/attune/p2.png', '/attune/p3.png', '/attune/p4.png', '/attune/p5.png'],
   },
   tara: {
     name: 'Tara', type: 'Food & culture', year: '2023', color: 'yellow',
@@ -33,7 +33,7 @@ const projects = {
     description: 'Tara helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
     github: 'https://github.com/',
     splash: '/tara/splash.jpg',
-    screens: ['tara-01', 'tara-02', 'tara-03', 'tara-04'],
+    screens: ['/tara/splash.jpg', '/tara/p2.jpg', '/tara/p4.jpg', '/tara/p3.jpg', '/tara/p5.jpg',],
   },
   quiz: {
     name: 'Android Quiz', type: 'Music', year: '2023', color: 'blue',
