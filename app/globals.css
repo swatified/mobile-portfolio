@@ -1179,6 +1179,8 @@ h2 {
   border-radius: 27px;
   height: 100%;
   object-fit: cover;
+  transform: scale(var(--video-zoom, 1));
+  transform-origin: center center;
   width: 100%;
 }
 
@@ -1399,6 +1401,16 @@ a {
   flex: 0 1 auto;
 }
 
+/* ── 5-phone gallery: keep all on one row, just tighten side padding ── */
+.project-gallery.gallery-count-5 {
+  flex-wrap: nowrap;
+}
+
+.project-gallery-section:has(.gallery-count-5) {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
 button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
@@ -1448,4 +1460,23 @@ html {
 body::before {
   content: '';
   display: none;
+}
+
+/* ── Gallery devices: no notch / no camera cutout ── */
+.project-gallery .project-device::before {
+  display: none;
+}
+
+/* ── Gallery devices: Android gesture/navigation bar at bottom of screen ── */
+.project-gallery .project-device-screen::after {
+  background: rgba(0, 0, 0, .28);
+  border-radius: 3px;
+  bottom: 7px;
+  content: '';
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 62px;
+  z-index: 10;
 }
