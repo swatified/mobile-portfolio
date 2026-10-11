@@ -45,9 +45,9 @@ export default function Page() {
       </header>
 
       <section id="top" className="hero-section">
-        <div className="eyebrow"><span className="eyebrow-dot" /> Android developer · visual thinker</div>
+        <div className="eyebrow"><span className="eyebrow-dot" /> Android · Flutter developer · visual thinker</div>
         <h1>Small screens. <br /> <em>Bigger</em> ideas</h1>
-        <div className="hero-bottom"><p>Design-led Android apps for curious teams, thoughtful brands, and people who care about the details.</p><a className="round-arrow" href="#work" aria-label="Scroll to selected work"><ArrowUpRight /></a></div>
+        <div className="hero-bottom"><p>I design and develop mobile applications for people who care about the details.</p><a className="round-arrow" href="#work" aria-label="Scroll to selected work"><ArrowUpRight /></a></div>
         <div className="hero-art" aria-hidden="true">
           <svg className="hero-scribble" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M80 177C116 95 204 54 288 69" stroke="var(--coral)" strokeWidth="5" strokeLinecap="round" />
@@ -75,12 +75,12 @@ export default function Page() {
             <circle cx="86" cy="314" r="10" fill="var(--mint)" stroke="var(--ink)" strokeWidth="1.5" />
             <path d="M405 330C430 311 449 283 454 252" stroke="var(--ink)" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
-          <span className="hero-art-note">ideas in motion</span>
+          <span className="hero-art-note">from pixels to products</span>
         </div>
       </section>
 
       <section id="work" className="work-section">
-        <div className="section-heading"><div><p className="section-label">01 / Selected work</p><h2>A few things<br /><em>I've made.</em></h2></div><p className="section-intro">Tap into a project to see the thinking, the craft, and the tiny decisions that make it feel just right.</p></div>
+        <div className="section-heading"><div><p className="section-label">01 / Personal projects</p><h2>A few things<br /><em>I've made.</em></h2></div><p className="section-intro">Apps built to solve real-world problems, <br /> focusing on accessibility, intuitive interfaces, and dependable code.</p></div>
         <div className="app-grid">{apps.map((app, index) => <a className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></a>)}</div>
       </section>
 

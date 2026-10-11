@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowUpRight, Code2 } from 'lucide-react'
 
 const projects = {
   verbix: {
-    name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
+    name: 'Verbix', type: 'Education', year: '2025', color: 'coral',
     intro: 'An AI-assisted learning platform for children with Dyslexia and other LDs.',
     description: 'Verbix is a cross-platform app that uses OCR and speech recognition to help children with dyslexia improve their reading and writing skills through personalized exercises and real-time feedback in a gamified manner.',
     github: 'https://github.com/swatified/Verbix-flutter',
@@ -20,7 +20,7 @@ const projects = {
     screens: ['/safebite/v1.mp4', '/safebite/v2.mp4', '/safebite/v3.mp4', '/safebite/v4.mp4'],
   },
   attune: {
-    name: 'Attune', type: 'Music & Lifestyle', year: '2025', color: 'mint',
+    name: 'Attune', type: 'Entertainment', year: '2025', color: 'mint',
     intro: 'Conversation and mood-based music playlists.',
     description: 'Attune is an LLM-powered application that engages users in meaningful conversations about their day, analyzes their emotional state, and creates personalized Spotify playlists that resonate with their current mood.',
     github: 'https://github.com/swatified/Attune',
@@ -36,7 +36,7 @@ const projects = {
     screens: ['/tara/splash.jpg', '/tara/p2.jpg', '/tara/p4.jpg', '/tara/p3.jpg', '/tara/p5.jpg',],
   },
   quiz: {
-    name: 'Android Quiz', type: 'Quiz', year: '2024', color: 'blue',
+    name: 'Android Quiz', type: 'Themed Quiz', year: '2024', color: 'blue',
     intro: ' ',
     description: 'A Christmas-themed Android quiz application designed to test and enhance your Android development knowledge through an engaging, and interactive learning experience.',
     github: 'https://github.com/swatified/AndroidQuiz',
@@ -45,7 +45,7 @@ const projects = {
     screens: ['/quiz/v1.mp4', '/quiz/v2.mp4'],
   },
   'verbixv1': {
-    name: 'Verbix V1', type: 'Daily planning', year: '2024', color: 'peach',
+    name: 'Verbix V1', type: 'Education', year: '2024', color: 'peach',
     intro: 'Learning app for speech and written exercises.',
     description: 'The app utilizes advanced OCR and speech recognition technology to analyze handwriting patterns and speech, providing real-time feedback for improved learning outcomes.',
     github: 'https://github.com/swatified/Verbix',
@@ -98,8 +98,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="project-page">
       <header className="project-header">
-        <Link className="project-back" href="/"><ArrowLeft /> Back to work</Link>
-        <span className="project-mark">Android / case study</span>
+        <Link className="project-back" href="/"><ArrowLeft /> Back to projects</Link>
+        <span className="project-mark">Project showcase</span>
       </header>
       <section className={`project-hero project-${project.color}`}>
         <div className="project-hero-copy">
