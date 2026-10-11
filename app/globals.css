@@ -415,7 +415,7 @@ h2 {
   margin-top: 9px;
 }
 
-.orbit-sun {
+.verbix-sun {
   align-items: center;
   background: var(--yellow);
   border-radius: 50%;
@@ -426,25 +426,25 @@ h2 {
   width: 34px;
 }
 
-.orbit-sun svg {
+.verbix-sun svg {
   height: 16px;
   width: 16px;
 }
 
-.orbit-card {
+.verbix-card {
   background: var(--coral);
   border-radius: 13px;
   margin-top: 22px;
   padding: 13px;
 }
 
-.orbit-card span,
-.orbit-card small {
+.verbix-card span,
+.verbix-card small {
   display: block;
   font-size: 7px;
 }
 
-.orbit-card strong {
+.verbix-card strong {
   display: block;
   font-size: 11px;
   margin: 8px 0 12px;
@@ -477,7 +477,7 @@ h2 {
   font-weight: 400;
 }
 
-.muse-orb {
+.safebite-orb {
   background: radial-gradient(circle at 35% 35%, #fff, var(--lavender) 45%, #a08bc9);
   border-radius: 50%;
   height: 118px;
@@ -485,7 +485,7 @@ h2 {
   width: 118px;
 }
 
-.muse-wave {
+.safebite-wave {
   align-items: center;
   display: flex;
   gap: 3px;
@@ -494,7 +494,7 @@ h2 {
   margin-top: 18px;
 }
 
-.muse-wave span {
+.safebite-wave span {
   background: var(--lavender);
   border-radius: 4px;
   height: calc(12px + var(--i, 1) * 7px);
@@ -531,7 +531,7 @@ h2 {
   font-size: 12px;
 }
 
-.mimo-chart {
+.attune-chart {
   align-items: end;
   display: flex;
   gap: 4px;
@@ -539,18 +539,18 @@ h2 {
   margin: 29px 0 12px;
 }
 
-.mimo-chart i {
+.attune-chart i {
   background: var(--mint);
   border-radius: 5px 5px 0 0;
   flex: 1;
   height: 45%;
 }
 
-.mimo-chart i:nth-child(2n) {
+.attune-chart i:nth-child(2n) {
   height: 72%;
 }
 
-.mimo-chart i:nth-child(3n) {
+.attune-chart i:nth-child(3n) {
   height: 88%;
 }
 
@@ -558,8 +558,8 @@ h2 {
   font-size: 8px;
 }
 
-.nori-image,
-.tempo-art {
+.tara-image,
+.quiz-art {
   background: var(--coral);
   border-radius: 16px;
   height: 132px;
@@ -567,17 +567,17 @@ h2 {
   position: relative;
 }
 
-.nori-image {
+.tara-image {
   background: linear-gradient(135deg, #d66f52, #f1c28f);
 }
 
-.nori-image span {
+.tara-image span {
   bottom: 10px;
   position: absolute;
   right: 12px;
 }
 
-.nori-place {
+.tara-place {
   background: var(--yellow);
   border-radius: 11px;
   display: flex;
@@ -588,25 +588,25 @@ h2 {
   padding: 12px;
 }
 
-.nori-place span {
+.tara-place span {
   color: var(--muted-ink);
 }
 
-.tempo-art {
+.quiz-art {
   align-items: center;
   background: var(--blue);
   display: flex;
   justify-content: center;
 }
 
-.tempo-disc {
+.quiz-disc {
   background: repeating-radial-gradient(circle, var(--coral) 0 7px, var(--ink) 8px 10px);
   border-radius: 50%;
   height: 92px;
   width: 92px;
 }
 
-.tempo-sticker {
+.quiz-sticker {
   background: var(--yellow);
   border-radius: 50%;
   font-size: 7px;
@@ -617,14 +617,14 @@ h2 {
   transform: rotate(12deg);
 }
 
-.tempo-player {
+.quiz-player {
   align-items: center;
   display: flex;
   justify-content: space-around;
   margin-top: 22px;
 }
 
-.tempo-player strong {
+.quiz-player strong {
   align-items: center;
   background: var(--ink);
   border-radius: 50%;

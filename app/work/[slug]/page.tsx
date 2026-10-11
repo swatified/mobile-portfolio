@@ -2,43 +2,71 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight, Code2 } from 'lucide-react'
 
 const projects = {
+  verbix: {
+    name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
+    intro: 'A calm command center for busy minds.',
+    description: 'Verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
+    github: 'https://github.com/',
+    screens: ['verbix-01', 'verbix-02', 'verbix-03', 'verbix-04'],
+  },
   orbit: {
     name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
     intro: 'A calm command center for busy minds.',
-    description: 'Orbit turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
+    description: 'Verbix turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
     github: 'https://github.com/',
     screens: ['orbit-01', 'orbit-02', 'orbit-03', 'orbit-04'],
   },
-  muse: {
-    name: 'Muse', type: 'Wellness', year: '2024', color: 'lavender',
+  safebite: {
+    name: 'SafeBite', type: 'Health/Cooking ', year: '2025', color: 'lavender',
     intro: 'Small rituals for a softer everyday.',
-    description: 'Muse is a pocket-sized space for guided breathing, evening rituals, and intentional pauses. The visual system uses soft contrast and slow motion to make the interface feel quieter than the world around it.',
+    description: 'SafeBite is a pocket-sized space for guided breathing, evening rituals, and intentional pauses. The visual system uses soft contrast and slow motion to make the interface feel quieter than the world around it.',
     github: 'https://github.com/',
-    screens: ['muse-01', 'muse-02', 'muse-03', 'muse-04', 'muse-05'],
+    screens: ['safebite-01', 'safebite-02', 'safebite-03', 'safebite-04', 'safebite-05'],
   },
-  mimo: {
-    name: 'Mimo', type: 'Finance', year: '2024', color: 'mint',
+  attune: {
+    name: 'Attune', type: 'Finance', year: '2024', color: 'mint',
     intro: 'Money clarity, without the spreadsheet energy.',
-    description: 'Mimo makes everyday money decisions easier to see. The app pairs a simple visual language with useful daily context, so progress feels understandable instead of intimidating.',
+    description: 'Attune makes everyday money decisions easier to see. The app pairs a simple visual language with useful daily context, so progress feels understandable instead of intimidating.',
     github: 'https://github.com/',
-    screens: ['mimo-01', 'mimo-02', 'mimo-03'],
+    screens: ['attune-01', 'attune-02', 'attune-03'],
+  },
+  tara: {
+    name: 'Tara', type: 'Women Safety', year: '2023', color: 'yellow',
+    intro: 'A curious guide to good places and better days.',
+    description: 'Tara helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
+    github: 'https://github.com/',
+    screens: ['tara-01', 'tara-02', 'tara-03', 'tara-04'],
   },
   nori: {
-    name: 'Nori', type: 'Food & culture', year: '2023', color: 'yellow',
+    name: 'Tara', type: 'Women Safety', year: '2023', color: 'yellow',
     intro: 'A curious guide to good places and better days.',
-    description: 'Nori helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
+    description: 'Tara helps curious people find places worth the walk. I explored editorial layouts, location-aware discovery, and a playful way to save the details that make a place memorable.',
     github: 'https://github.com/',
     screens: ['nori-01', 'nori-02', 'nori-03', 'nori-04'],
   },
-  tempo: {
-    name: 'Tempo', type: 'Music', year: '2023', color: 'blue',
+  quiz: {
+    name: 'Android Quiz', type: 'Themed Quiz', year: '2023', color: 'blue',
     intro: 'Find your pace. Then lose yourself in it.',
-    description: 'Tempo is a music companion built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the listening experience feeling alive.',
+    description: 'Android Quiz is an interactive trivia app built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the experience feeling alive.',
+    github: 'https://github.com/',
+    screens: ['quiz-01', 'quiz-02', 'quiz-03'],
+  },
+  tempo: {
+    name: 'Android Quiz', type: 'Themed Quiz', year: '2023', color: 'blue',
+    intro: 'Find your pace. Then lose yourself in it.',
+    description: 'Android Quiz is an interactive trivia app built around movement and mood. Big artwork, expressive playback states, and lightweight gestures keep the experience feeling alive.',
     github: 'https://github.com/',
     screens: ['tempo-01', 'tempo-02', 'tempo-03'],
   },
+  verbixv1: {
+    name: 'Verbix V1', type: 'Education', year: '2025', color: 'peach',
+    intro: 'A softer way to get things done.',
+    description: 'A focused companion for daily planning, built as an exploration of warm surfaces, useful constraints, and motion that rewards completion without shouting for attention.',
+    github: 'https://github.com/',
+    screens: ['verbixv1-01', 'verbixv1-02', 'verbixv1-03', 'verbixv1-04'],
+  },
   'orbit-daily': {
-    name: 'Orbit Daily', type: 'Daily planning', year: '2025', color: 'peach',
+    name: 'Verbix V1', type: 'Education', year: '2025', color: 'peach',
     intro: 'A softer way to get things done.',
     description: 'A focused companion for daily planning, built as an exploration of warm surfaces, useful constraints, and motion that rewards completion without shouting for attention.',
     github: 'https://github.com/',
@@ -61,7 +89,7 @@ function MediaPlaceholder({ project, screen, index }: { project: Project; screen
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const project = projects[slug as keyof typeof projects] ?? projects.orbit
+  const project = projects[slug as keyof typeof projects] ?? projects.verbix
 
   return (
     <main className="project-page">
