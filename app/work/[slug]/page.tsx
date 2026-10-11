@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, Code2 } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowUpRight, Code2 } from 'lucide-react'
 
 const projects = {
   verbix: {
@@ -107,11 +107,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <h1>{project.name}<em>.</em></h1>
           <p className="project-intro">{project.intro}</p>
           <p className="project-description">{project.description}</p>
-          <a className="github-link" href={project.github} target="_blank" rel="noreferrer"><Code2 /> View on GitHub <ArrowUpRight /></a>
+          <div className="project-hero-actions">
+            <a className="github-link" href={project.github} target="_blank" rel="noreferrer"><Code2 /> View on GitHub <ArrowUpRight /></a>
+            <a className="round-arrow" href="#screens" aria-label="Scroll to screens showcase"><ArrowDown /></a>
+          </div>
         </div>
         <div className="project-hero-device"><MediaPlaceholder project={project} screen={(project as { splash?: string }).splash ?? project.screens[0]} index={0} /></div>
       </section>
-      <section className="project-gallery-section">
+      <section id="screens" className="project-gallery-section">
         <div className="project-gallery-heading"><p className="section-label">The screens</p><p>Swipe through the details<br />that make it feel real.</p></div>
         <div className={`project-gallery gallery-count-${project.screens.length}`}>
           {project.screens.map((screen, index) => <MediaPlaceholder key={screen} project={project} screen={screen} index={index} />)}

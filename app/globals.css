@@ -185,12 +185,17 @@ h2 em {
   justify-content: center;
   transition: .3s ease;
   width: 52px;
+  margin-top: 32px;
 }
 
 .round-arrow:hover {
   background: var(--ink);
   color: var(--paper);
-  transform: rotate(45deg);
+  transform: translateY(4px);
+}
+
+.round-arrow:active {
+  transform: translateY(6px);
 }
 
 .round-arrow svg {
@@ -1153,6 +1158,23 @@ h2 {
 
 .project-coral .media-placeholder {
   background: linear-gradient(145deg, #ee826d, #f1d77e);
+}
+
+.project-hero-actions {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 35px;
+  max-width: 440px;
+}
+
+.project-hero-actions .github-link {
+  margin-top: 0;
+}
+
+.project-hero-actions .round-arrow {
+  margin-top: 0;
 }
 
 .github-link {

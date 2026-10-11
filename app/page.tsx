@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-react'
 import { useState } from 'react'
 
 const apps = [
@@ -40,14 +40,14 @@ export default function Page() {
     <main className="portfolio-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">S</span><span>Swati Sharma<span className="brand-dot">.</span></span></a>
-        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#work" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
+        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
         <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
       <section id="top" className="hero-section">
         <div className="eyebrow"><span className="eyebrow-dot" /> Android · Flutter developer · visual thinker</div>
         <h1>Small screens. <br /> <em>Bigger</em> ideas</h1>
-        <div className="hero-bottom"><p>I design and develop mobile applications for people who care about the details.</p><a className="round-arrow" href="#work" aria-label="Scroll to selected work"><ArrowUpRight /></a></div>
+        <div className="hero-bottom"><p>I design and develop mobile applications for people who care about the details.</p><a className="round-arrow" href="#projects" aria-label="Scroll to projects"><ArrowDown /></a></div>
         <div className="hero-art" aria-hidden="true">
           <svg className="hero-scribble" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M80 177C116 95 204 54 288 69" stroke="var(--coral)" strokeWidth="5" strokeLinecap="round" />
@@ -79,7 +79,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="work" className="work-section">
+      <section id="projects" className="work-section">
+        <span id="work" aria-hidden="true" />
         <div className="section-heading"><div><p className="section-label">01 / Personal projects</p><h2>A few things<br /><em>I've made.</em></h2></div><p className="section-intro">Apps built to solve real-world problems, <br /> focusing on accessibility, intuitive interfaces, and dependable code.</p></div>
         <div className="app-grid">{apps.map((app, index) => <a className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></a>)}</div>
       </section>
