@@ -4,12 +4,12 @@ import { ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-reac
 import { useState } from 'react'
 
 const apps = [
-  { id: '01', name: 'Verbix', slug: 'verbix', type: 'Education', color: 'coral', className: 'app-verbix', stat: 'Focus, in motion', note: 'A calm command center for busy minds.', image: '/verbix/splash.jpg' },
-  { id: '02', name: 'SafeBite', slug: 'safebite', type: 'Health/Cooking', color: 'lavender', className: 'app-safebite', stat: 'Breathe deeper', note: 'Small rituals for a softer everyday.', image: '/safebite/splash.jpg' },
-  { id: '03', name: 'Attune', slug: 'attune', type: 'Entertainment', color: 'mint', className: 'app-attune', stat: '€ 2,480.90', note: 'Money clarity, without the spreadsheet energy.', image: '/attune/splash.jpg' },
-  { id: '04', name: 'Tara', slug: 'tara', type: 'Women Safety', color: 'yellow', className: 'app-tara', stat: 'Tokyo · 24°', note: 'A curious guide to good places and better days.', image: '/tara/splash.jpg' },
-  { id: '05', name: 'ANdroid Quiz', slug: 'quiz', type: 'Themed Quiz', color: 'blue', className: 'app-quiz', stat: '04:32', note: 'Find your pace. Then lose yourself in it.', image: '/quiz/splash.jpg' },
-  { id: '06', name: 'Verbix V1', slug: 'verbixv1', type: 'Education', color: 'peach', className: 'app-verbix', stat: 'Flow state', note: 'A softer way to get things done.', image: '/verbix_v1/splash.jpg' },
+  { id: '01', name: 'Verbix', slug: 'verbix', type: 'Education', color: 'coral', className: 'app-verbix', stat: 'Focus, in motion', note: 'AI-assisted learning for children with Dyslexia.', image: '/verbix/splash.jpg' },
+  { id: '02', name: 'SafeBite', slug: 'safebite', type: 'Health/Cooking', color: 'lavender', className: 'app-safebite', stat: 'Breathe deeper', note: 'Alternative recipes app for people with food intolerances.', image: '/safebite/splash.jpg' },
+  { id: '03', name: 'Attune', slug: 'attune', type: 'Entertainment', color: 'mint', className: 'app-attune', stat: '€ 2,480.90', note: 'Conversation and mood-based music playlists.', image: '/attune/splash.jpg' },
+  { id: '04', name: 'Tara', slug: 'tara', type: 'Women Safety', color: 'yellow', className: 'app-tara', stat: 'Tokyo · 24°', note: 'Women safety app for risk zone predictions and many more.', image: '/tara/splash.jpg' },
+  { id: '05', name: 'Android Quiz', slug: 'quiz', type: 'Themed Quiz', color: 'blue', className: 'app-quiz', stat: '04:32', note: 'A Christmas-themed quiz application to test your Android fundamentals.', image: '/quiz/splash.jpg' },
+  { id: '06', name: 'Verbix V1', slug: 'verbixv1', type: 'Education', color: 'peach', className: 'app-verbix', stat: 'Flow state', note: 'Learning app for speech and written exercises.', image: '/verbix_v1/splash.jpg' },
 ]
 
 function PhoneScreen({ app }: { app: (typeof apps)[number] }) {
@@ -39,8 +39,8 @@ export default function Page() {
   return (
     <main className="portfolio-shell">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">A</span><span>Alex Morgan<span className="brand-dot">.</span></span></a>
-        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a><a href="#about" onClick={() => setMenuOpen(false)}>About</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
+        <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">S</span><span>Swati Sharma<span className="brand-dot">.</span></span></a>
+        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#work" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
         <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
@@ -84,9 +84,7 @@ export default function Page() {
         <div className="app-grid">{apps.map((app, index) => <a className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></a>)}</div>
       </section>
 
-      <section id="about" className="about-section"><p className="section-label">02 / A little about me</p><div className="about-layout"><h2>Not just<br /><em>pixels.</em></h2><div><p className="about-lede">I'm Alex, an Android developer who likes turning complex ideas into simple, tactile experiences.</p><p className="about-copy">From the first sketch to the final motion curve, I care about how things feel. I work across product, interaction, and code to make apps that are useful, expressive, and quietly memorable.</p><div className="tool-list"><span>Kotlin</span><span>Jetpack Compose</span><span>Motion</span><span>Design systems</span></div></div></div></section>
-
-      <footer id="contact" className="site-footer"><div><p className="section-label">03 / Say hello</p><h2>Have a good<br /><em>idea?</em></h2></div><div className="footer-right"><a className="contact-link" href="mailto:hello@alexmorgan.dev">Let's talk <ArrowUpRight /></a><div className="social-links"><a href="https://github.com" target="_blank" rel="noreferrer"><Code2 /> GitHub</a><a href="https://linkedin.com" target="_blank" rel="noreferrer"><Link2 /> LinkedIn</a><a href="mailto:hello@alexmorgan.dev"><Mail /> Email</a></div><p className="copyright">© 2025 Alex Morgan. Made with care.</p></div></footer>
+      <footer id="contact" className="site-footer"><div><p className="section-label">02 / Say hello</p><h2><em>Connect</em><br /> with me.</h2></div><div className="footer-right"><a className="contact-link" href="mailto:[EMAIL_ADDRESS]">Let's talk <ArrowUpRight /></a><div className="social-links"><a href="https://github.com/swatified" target="_blank" rel="noreferrer"><Code2 /> GitHub</a><a href="https://www.linkedin.com/in/dev-swati/" target="_blank" rel="noreferrer"><Link2 /> LinkedIn</a><a href="mailto:25sharmswati@gmail.com"><Mail /> Email</a></div><p className="copyright">© 2026 Swati Sharma</p></div></footer>
     </main>
   )
 }
