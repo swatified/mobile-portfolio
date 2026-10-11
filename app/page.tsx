@@ -89,7 +89,7 @@ export default function Page() {
         <div className="app-grid">{apps.map((app, index) => <a className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></a>)}</div>
       </section>
 
-      <footer id="contact" className="site-footer"><div><p className="section-label">02 / Say hello</p><h2><em>Connect</em><br /> with me.</h2></div><div className="footer-right"><a className="contact-link" href="mailto:[EMAIL_ADDRESS]">Let's talk <ArrowUpRight /></a><div className="social-links"><a href="https://github.com/swatified" target="_blank" rel="noreferrer"><Code2 /> GitHub</a><a href="https://www.linkedin.com/in/dev-swati/" target="_blank" rel="noreferrer"><Link2 /> LinkedIn</a><a href="mailto:25sharmswati@gmail.com"><Mail /> Email</a></div><p className="copyright">© 2026 Swati Sharma</p></div></footer>
+      <footer id="contact" className="site-footer"><div><p className="section-label">02 / Say hello</p><h2><em>Connect</em><br /> with me.</h2></div><div className="footer-right"><a className="contact-link" href="mailto:25sharmswati@gmail.com">Let's talk <ArrowUpRight /></a><div className="social-links"><a href="https://github.com/swatified" target="_blank" rel="noreferrer"><Code2 /> GitHub</a><a href="https://www.linkedin.com/in/dev-swati/" target="_blank" rel="noreferrer"><Link2 /> LinkedIn</a><a href="mailto:25sharmswati@gmail.com"><Mail /> Email</a></div><p className="copyright">© 2026 Swati Sharma</p></div></footer>
     </main>
   )
 }
