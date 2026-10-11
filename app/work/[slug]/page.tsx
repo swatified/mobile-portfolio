@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowUpRight, Code2 } from 'lucide-react'
 
 const projects = {
   orbit: {
-    name: 'Orbit', type: 'Productivity', year: '2025', color: 'coral',
+    name: 'Verbix', type: 'Educational Platform', year: '2025', color: 'coral',
     intro: 'A calm command center for busy minds.',
     description: 'Orbit turns the noisy parts of a day into a clear, tactile rhythm. I designed the experience around focus, gentle momentum, and the small feedback moments that make planning feel rewarding.',
     github: 'https://github.com/',
@@ -38,7 +38,7 @@ const projects = {
     screens: ['tempo-01', 'tempo-02', 'tempo-03'],
   },
   'orbit-daily': {
-    name: 'Orbit Daily', type: 'Daily planning', year: '2025', color: 'coral',
+    name: 'Orbit Daily', type: 'Daily planning', year: '2025', color: 'peach',
     intro: 'A softer way to get things done.',
     description: 'A focused companion for daily planning, built as an exploration of warm surfaces, useful constraints, and motion that rewards completion without shouting for attention.',
     github: 'https://github.com/',

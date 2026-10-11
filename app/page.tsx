@@ -4,25 +4,31 @@ import { ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-reac
 import { useState } from 'react'
 
 const apps = [
-  { id: '01', name: 'Orbit', slug: 'orbit', type: 'Productivity', color: 'coral', className: 'app-orbit', stat: 'Focus, in motion', note: 'A calm command center for busy minds.' },
-  { id: '02', name: 'Muse', slug: 'muse', type: 'Wellness', color: 'lavender', className: 'app-muse', stat: 'Breathe deeper', note: 'Small rituals for a softer everyday.' },
-  { id: '03', name: 'Mimo', slug: 'mimo', type: 'Finance', color: 'mint', className: 'app-mimo', stat: '€ 2,480.90', note: 'Money clarity, without the spreadsheet energy.' },
-  { id: '04', name: 'Nori', slug: 'nori', type: 'Food & culture', color: 'yellow', className: 'app-nori', stat: 'Tokyo · 24°', note: 'A curious guide to good places and better days.' },
-  { id: '05', name: 'Tempo', slug: 'tempo', type: 'Music', color: 'blue', className: 'app-tempo', stat: '04:32', note: 'Find your pace. Then lose yourself in it.' },
-  { id: '06', name: 'Orbit', slug: 'orbit-daily', type: 'Daily planning', color: 'coral', className: 'app-orbit', stat: 'Flow state', note: 'A softer way to get things done.' },
+  { id: '01', name: 'Verbix', slug: 'verbix', type: 'Education', color: 'coral', className: 'app-verbix', stat: 'Focus, in motion', note: 'A calm command center for busy minds.', image: '/verbix/splash.jpg' },
+  { id: '02', name: 'SafeBite', slug: 'safebite', type: 'Health/Cooking', color: 'lavender', className: 'app-safebite', stat: 'Breathe deeper', note: 'Small rituals for a softer everyday.', image: '/safebite/splash.jpg' },
+  { id: '03', name: 'Attune', slug: 'attune', type: 'Entertainment', color: 'mint', className: 'app-attune', stat: '€ 2,480.90', note: 'Money clarity, without the spreadsheet energy.', image: '/attune/splash.jpg' },
+  { id: '04', name: 'Tara', slug: 'tara', type: 'Women Safety', color: 'yellow', className: 'app-tara', stat: 'Tokyo · 24°', note: 'A curious guide to good places and better days.', image: '/tara/splash.jpg' },
+  { id: '05', name: 'ANdroid Quiz', slug: 'quiz', type: 'Themed Quiz', color: 'blue', className: 'app-quiz', stat: '04:32', note: 'Find your pace. Then lose yourself in it.', image: '/quiz/splash.jpg' },
+  { id: '06', name: 'Verbix V1', slug: 'verbixv1', type: 'Education', color: 'peach', className: 'app-verbix', stat: 'Flow state', note: 'A softer way to get things done.', image: '/verbix_v1/splash.jpg' },
 ]
 
 function PhoneScreen({ app }: { app: (typeof apps)[number] }) {
   return (
     <div className={`phone ${app.className}`} aria-label={`${app.name} app preview`}>
       <div className="phone-speaker" />
-      <div className="phone-screen">
-        <div className="status-bar"><span>9:41</span><span>● )))</span></div>
-        {app.className === 'app-orbit' && <><div className="screen-top"><span>Tuesday, Sep 17</span><span>•••</span></div><div className="orbit-sun"><Sparkles /></div><p className="screen-kicker">Good morning, Alex</p><h3>Make space<br />for what matters.</h3><div className="orbit-card"><span>Today's focus</span><strong>Ship the beautiful thing</strong><div className="progress"><i /></div><small>3 of 5 tasks complete</small></div><div className="screen-row"><b>09:00</b><span>Design review</span></div><div className="screen-row"><b>11:30</b><span>Walk & think</span></div></>}
-        {app.className === 'app-muse' && <><div className="screen-top"><span>Muse</span><span>♡</span></div><div className="muse-orb" /><p className="screen-kicker">Your evening ritual</p><h3>Release the<br />busy mind.</h3><div className="muse-wave"><span /><span /><span /><span /><span /><span /><span /></div><button className="play-button">▶</button><small className="center-small">4:32 · Night tide</small></>}
-        {app.className === 'app-mimo' && <><div className="screen-top"><span>September</span><span>⌄</span></div><p className="screen-kicker">Your balance</p><h3 className="money">€ 2,480<sup>.90</sup></h3><div className="mimo-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="money-row"><span>Spent this month</span><b>€ 1,240.40</b></div><div className="money-row"><span>Safe to spend</span><b>€ 38 / day</b></div></>}
-        {app.className === 'app-nori' && <><div className="nori-image"><span>↗</span></div><p className="screen-kicker">Good morning, Tokyo</p><h3>Eat something<br />worth the walk.</h3><div className="nori-place"><strong>Soba Kanda</strong><span>0.8 km · ¥¥</span></div></>}
-        {app.className === 'app-tempo' && <><div className="tempo-art"><div className="tempo-disc" /><div className="tempo-sticker">NEW MIX</div></div><p className="screen-kicker">Made for your Monday</p><h3>Keep going,<br />keep moving.</h3><div className="tempo-player"><span>‹</span><strong>▶</strong><span>›</span></div><small className="center-small">Bram Inscore · All I Need</small></>}
+      <div className={`phone-screen ${app.image ? 'has-image' : ''}`}>
+        {app.image ? (
+          <img src={app.image} alt={`${app.name} preview`} />
+        ) : (
+          <>
+            <div className="status-bar"><span>9:41</span><span>● )))</span></div>
+            {app.className === 'app-verbix' && <><div className="screen-top"><span>Tuesday, Sep 17</span><span>•••</span></div><div className="verbix-sun"><Sparkles /></div><p className="screen-kicker">Good morning, Alex</p><h3>Make space<br />for what matters.</h3><div className="verbix-card"><span>Today's focus</span><strong>Ship the beautiful thing</strong><div className="progress"><i /></div><small>3 of 5 tasks complete</small></div><div className="screen-row"><b>09:00</b><span>Design review</span></div><div className="screen-row"><b>11:30</b><span>Walk & think</span></div></>}
+            {app.className === 'app-safebite' && <><div className="screen-top"><span>safebite</span><span>♡</span></div><div className="safebite-orb" /><p className="screen-kicker">Your evening ritual</p><h3>Release the<br />busy mind.</h3><div className="safebite-wave"><span /><span /><span /><span /><span /><span /><span /></div><button className="play-button">▶</button><small className="center-small">4:32 · Night tide</small></>}
+            {app.className === 'app-attune' && <><div className="screen-top"><span>September</span><span>⌄</span></div><p className="screen-kicker">Your balance</p><h3 className="money">€ 2,480<sup>.90</sup></h3><div className="attune-chart"><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="money-row"><span>Spent this month</span><b>€ 1,240.40</b></div><div className="money-row"><span>Safe to spend</span><b>€ 38 / day</b></div></>}
+            {app.className === 'app-tara' && <><div className="tara-image"><span>↗</span></div><p className="screen-kicker">Good morning, Tokyo</p><h3>Eat something<br />worth the walk.</h3><div className="tara-place"><strong>Soba Kanda</strong><span>0.8 km · ¥¥</span></div></>}
+            {app.className === 'app-quiz' && <><div className="quiz-art"><div className="quiz-disc" /><div className="quiz-sticker">NEW MIX</div></div><p className="screen-kicker">Made for your Monday</p><h3>Keep going,<br />keep moving.</h3><div className="quiz-player"><span>‹</span><strong>▶</strong><span>›</span></div><small className="center-small">Bram Inscore · All I Need</small></>}
+          </>
+        )}
       </div>
     </div>
   )
@@ -33,14 +39,14 @@ export default function Page() {
   return (
     <main className="portfolio-shell">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Alex Morgan home"><span className="brand-mark">A</span><span>Alex Morgan<span className="brand-dot">.</span></span></a>
+        <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">A</span><span>Alex Morgan<span className="brand-dot">.</span></span></a>
         <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a><a href="#about" onClick={() => setMenuOpen(false)}>About</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
         <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
       <section id="top" className="hero-section">
         <div className="eyebrow"><span className="eyebrow-dot" /> Android developer · visual thinker</div>
-        <h1>I build mobile<br /><em>worlds</em> people<br />want to live in.</h1>
+        <h1>Small screens. <br /> <em>Bigger</em> ideas</h1>
         <div className="hero-bottom"><p>Design-led Android apps for curious teams, thoughtful brands, and people who care about the details.</p><a className="round-arrow" href="#work" aria-label="Scroll to selected work"><ArrowUpRight /></a></div>
         <div className="hero-art" aria-hidden="true">
           <svg className="hero-scribble" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">

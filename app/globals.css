@@ -9,6 +9,7 @@
   --yellow: #efd477;
   --lavender: #c8b9e6;
   --blue: #a9c9e1;
+  --peach: #F4D6B8;
 }
 
 * {
@@ -308,8 +309,12 @@ h2 {
 }
 
 .card-6 {
-  background: var(--coral);
+  background: var(--peach);
   grid-column: span 4;
+}
+
+.card-peach {
+  background: var(--peach);
 }
 
 .card-meta,
@@ -378,6 +383,11 @@ h2 {
   overflow: hidden;
   padding: 18px 15px;
   position: relative;
+}
+
+.phone-screen.has-image,
+.phone-screen:has(img) {
+  padding: 0;
 }
 
 .status-bar,
@@ -668,6 +678,10 @@ h2 {
 
 .color-dot.blue {
   background: var(--blue);
+}
+
+.color-dot.peach {
+  background: var(--peach);
 }
 
 .about-section {
@@ -1247,6 +1261,10 @@ h2 {
   background: var(--blue);
 }
 
+.project-peach {
+  background: var(--peach);
+}
+
 .project-gallery-section {
   background: var(--paper);
 }
@@ -1348,6 +1366,7 @@ body {
 .phone-screen>img,
 .phone-screen>video {
   border-radius: 25px;
+  display: block;
   height: 100%;
   object-fit: cover;
   width: 100%;
