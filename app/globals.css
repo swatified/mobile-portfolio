@@ -1411,6 +1411,13 @@ a {
   padding-right: 2vw;
 }
 
+/* ── 6-phone gallery: 3 per row ── */
+.project-gallery.gallery-count-6 {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+}
+
 button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
