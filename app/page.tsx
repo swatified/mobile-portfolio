@@ -40,7 +40,7 @@ export default function Page() {
     <main className="portfolio-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Swati Sharma home"><span className="brand-mark">S</span><span>Swati Sharma<span className="brand-dot">.</span></span></a>
-        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
+        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation"><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a><a href="/resume/resume.pdf" target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}>Resume</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></nav>
         <button className="menu-toggle" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
