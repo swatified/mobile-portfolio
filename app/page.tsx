@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowDown, ArrowUpRight, Code2, Link2, Mail, Menu, Sparkles, X } from 'lucide-react'
+import Link from 'next/link'
 import { useState } from 'react'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
@@ -86,7 +87,7 @@ export default function Page() {
       <section id="projects" className="work-section">
         <span id="work" aria-hidden="true" />
         <div className="section-heading"><div><p className="section-label">01 / Personal projects</p><h2>A few things<br /><em>I've made.</em></h2></div><p className="section-intro">Apps built to solve real-world problems, <br /> focusing on accessibility, intuitive interfaces, and dependable code.</p></div>
-        <div className="app-grid">{apps.map((app, index) => <a className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></a>)}</div>
+        <div className="app-grid">{apps.map((app, index) => <Link className={`app-card card-${index + 1}`} href={`/work/${app.slug}`} key={app.id}><div className="card-meta"><span>{app.id}</span><span>{app.type}</span><ArrowUpRight /></div><div className="phone-wrap"><PhoneScreen app={app} /></div><div className="card-footer"><div><h3>{app.name}</h3><p>{app.note}</p></div><span className={`color-dot ${app.color}`} /></div></Link>)}</div>
       </section>
 
       <footer id="contact" className="site-footer"><div><p className="section-label">02 / Say hello</p><h2><em>Connect</em><br /> with me.</h2></div><div className="footer-right"><a className="contact-link" href="mailto:25sharmswati@gmail.com">Let's talk <ArrowUpRight /></a><div className="social-links"><a href="https://github.com/swatified" target="_blank" rel="noreferrer"><Code2 /> GitHub</a><a href="https://www.linkedin.com/in/dev-swati/" target="_blank" rel="noreferrer"><Link2 /> LinkedIn</a><a href="mailto:25sharmswati@gmail.com"><Mail /> Email</a></div><p className="copyright">© 2026 Swati Sharma</p></div></footer>
